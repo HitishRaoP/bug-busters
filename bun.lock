@@ -54,6 +54,7 @@
       },
       "devDependencies": {
         "@biomejs/biome": "1.9.4",
+        "@bug-busters/utils": "*",
         "@types/bun": "latest",
         "@types/cors": "^2.8.17",
         "@types/express": "^5.0.1",
@@ -117,15 +118,26 @@
         "typescript": "5.8.2",
       },
     },
+    "packages/types": {
+      "name": "@bug-busters/types",
+      "devDependencies": {
+        "@types/bun": "latest",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
     "packages/typescript-config": {
       "name": "@repo/typescript-config",
       "version": "0.0.0",
     },
     "packages/utils": {
-      "name": "utils",
+      "name": "@bug-busters/utils",
       "devDependencies": {
         "@biomejs/biome": "1.9.4",
+        "@bug-busters/types": "*",
         "@types/bun": "latest",
+        "@types/express": "^5.0.1",
       },
       "peerDependencies": {
         "typescript": "^5",
@@ -150,6 +162,10 @@
     "@biomejs/cli-win32-arm64": ["@biomejs/cli-win32-arm64@1.9.4", "", { "os": "win32", "cpu": "arm64" }, "sha512-tlbhLk+WXZmgwoIKwHIHEBZUwxml7bRJgk0X2sPyNR3S93cdRq6XulAZRQJ17FYGGzWne0fgrXBKpl7l4M87Hg=="],
 
     "@biomejs/cli-win32-x64": ["@biomejs/cli-win32-x64@1.9.4", "", { "os": "win32", "cpu": "x64" }, "sha512-8Y5wMhVIPaWe6jw2H+KlEm4wP/f7EW3810ZLmDlrEEy5KvBsb9ECEfu/kMWD484ijfQ8+nIi0giMgu9g1UAuuA=="],
+
+    "@bug-busters/types": ["@bug-busters/types@workspace:packages/types"],
+
+    "@bug-busters/utils": ["@bug-busters/utils@workspace:packages/utils"],
 
     "@bug-busters/web": ["@bug-busters/web@workspace:apps/web"],
 
@@ -676,8 +692,6 @@
     "uri-js": ["uri-js@4.4.1", "", { "dependencies": { "punycode": "^2.1.0" } }, "sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg=="],
 
     "user-server": ["user-server@workspace:apps/user-server"],
-
-    "utils": ["utils@workspace:packages/utils"],
 
     "vary": ["vary@1.1.2", "", {}, "sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg=="],
 

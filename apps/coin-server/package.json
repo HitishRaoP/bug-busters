@@ -4,6 +4,7 @@
 	"type": "module",
 	"private": true,
 	"scripts": {
+		"dev": "tsx watch api/index.ts",
 		"check": "biome check",
 		"check:write": "bun check --write",
 		"check-types": "tsc --noEmit"
@@ -13,6 +14,7 @@
 		"@types/bun": "latest",
 		"@types/cors": "^2.8.17",
 		"@types/express": "^5.0.1",
+		"@bug-busters/utils": "*",
 		"tsx": "^4.19.3"
 	},
 	"peerDependencies": {

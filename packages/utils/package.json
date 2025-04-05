@@ -1,11 +1,16 @@
 {
-  "name": "utils",
-  "module": "index.ts",
+  "name": "@bug-busters/utils",
   "type": "module",
   "private": true,
+  "exports": {
+    ".": "./index.ts",
+    "./send-response": "./src/send-response.ts"
+  },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/express": "^5.0.1",
+    "@bug-busters/types": "*"
   },
   "peerDependencies": {
     "typescript": "^5"

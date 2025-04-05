@@ -1,1 +1,1 @@
-console.log("Hello via Bun!");
+export { sendResponse } from "./src/send-response"
