@@ -4,6 +4,7 @@
 	"type": "module",
 	"private": true,
 	"scripts": {
+		"dev": "tsx watch api/index.ts",
 		"check": "biome check",
 		"check:write": "bun check --write",
 		"check-types": "tsc --noEmit"
@@ -19,6 +20,7 @@
 		"typescript": "^5"
 	},
 	"dependencies": {
+		"@bug-busters/utils": "*",
 		"cors": "^2.8.5",
 		"dotenv": "^16.4.7",
 		"express": "^5.1.0"
