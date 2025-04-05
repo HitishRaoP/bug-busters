@@ -1,17 +1,19 @@
 {
-  "name": "@bug-busters/types",
+  "name": "@bug-busters/schemas",
   "module": "index.ts",
   "type": "module",
   "private": true,
-  "exports":{
-    "./Api": "./Api.d.ts",
-    "./profile": "./Profile.d.ts",
-    "./planning": "./Planning.d.ts"
+  "exports": {
+    "./profile" : "./src/user/profile.schema.ts"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "zod": "^3.24.2"
   }
 }

@@ -14,6 +14,7 @@
 		"@types/bun": "latest",
 		"@types/cors": "^2.8.17",
 		"@types/express": "^5.0.1",
+		"@bug-busters/types": "*",
 		"tsx": "^4.19.3"
 	},
 	"peerDependencies": {
@@ -21,8 +22,10 @@
 	},
 	"dependencies": {
 		"@bug-busters/utils": "*",
+		"@bug-busters/schemas": "*",
 		"cors": "^2.8.5",
 		"dotenv": "^16.4.7",
-		"express": "^5.1.0"
+		"express": "^5.1.0",
+		"mongoose": "^8.13.2"
 	}
 }

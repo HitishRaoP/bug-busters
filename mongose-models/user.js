@@ -1,11 +1,5 @@
 import mongoose from "mongoose";
 
-const TaskSchema = new mongoose.Schema({
-  title: { type: String, required: true },
-  completed: { type: Boolean, required: true },
-  date: { type: Date, required: true }
-}, { _id: false });
-
 const CoinHistorySchema = new mongoose.Schema({
   amount: { type: Number, required: true },
   reason: { type: String, required: true }, // e.g., 'completed_task', 'missed_task'
@@ -27,37 +21,17 @@ const AudioContentSchema = new mongoose.Schema({
   progress: { type: Number, default: 0 } // Track progress percentage
 }, { _id: false });
 
-// New schema for badges and achievements
-const BadgeSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  description: { type: String, required: true },
-  earned_date: { type: Date, required: true },
-  category: { type: String, required: true }, // physical, mental, emotional, spiritual
-  icon: { type: String, required: false }
-}, { _id: false });
-
-// New schema for 41-Day Challenge
-const ChallengeSchema = new mongoose.Schema({
-  goal: { type: String, required: true },
-  progress: { type: Number, default: 0 }, // 0-100%
-  start_date: { type: Date, required: true },
-  current_day: { type: Number, default: 1 },
-  completed: { type: Boolean, default: false },
-  missed_days: { type: [Date], default: [] },
-  difficulty_adjustment: { type: Number, default: 0 } // Tracks difficulty changes based on missed tasks
-}, { _id: false });
-
 const UserSchema = new mongoose.Schema({
   name: { type: String, required: true },
   age: { type: Number, required: true },
   profession: { type: String, required: true },
   interests: { type: [String], required: true },
   goals: { type: [String], required: true },
-  
+
   coins: { type: Number, required: true },
   level: { type: Number, required: true },
   experiencePoints: { type: Number, required: true },
-  
+
   // New personal growth path fields
   growth_category: { type: String, enum: ["student", "professional", "fitness", "spiritual"], required: true },
   personal_journey: { type: String, required: true },
@@ -90,7 +64,7 @@ const UserSchema = new mongoose.Schema({
   // Gamification elements
   badges: { type: [BadgeSchema], default: [] },
   titles: { type: [String], default: [] }, // Special titles earned by users
-  
+
   // Audio Library
   audio_content_history: { type: [AudioContentSchema], default: [] },
   favorite_content: { type: [mongoose.Schema.Types.ObjectId], default: [], ref: "AudioContent" },
@@ -110,7 +84,7 @@ const UserSchema = new mongoose.Schema({
   // Enhanced accountability partnerships
   partner_id: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: false },
   accountability_groups: [{ type: mongoose.Schema.Types.ObjectId, ref: "Group" }],
-  
+
   // Track messaging access level
   messaging_access_level: { type: Number, default: 1, min: 1, max: 3 }
 });

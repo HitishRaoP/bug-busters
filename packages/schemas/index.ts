@@ -1,0 +1,1 @@
+export { ProfileSchema } from "./src/user/profile.schema"
